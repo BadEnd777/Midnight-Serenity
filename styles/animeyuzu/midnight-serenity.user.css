@@ -1,0 +1,472 @@
+/* ==UserStyle==
+@name Midnight Serenity - AnimeYuzu
+@namespace github.com/BadEnd777/Midnight-Serenity/styles/animeyuzu
+@homepageURL https://github.com/BadEnd777/Midnight-Serenity/tree/main/styles/animeyuzu
+@version 1.0.0
+@updateURL https://github.com/BadEnd777/Midnight-Serenity/raw/main/styles/animeyuzu/midnight-serenity.user.css
+@supportURL https://github.com/BadEnd777/Midnight-Serenity/issues?q=is%3Aissue+is%3Aopen+label%3Aanimeyuzu
+@description A dark theme with a touch of color for AnimeYuzu.
+@author BadEnd777
+@license MIT
+==/UserStyle== */
+
+@-moz-document domain("animeyuzu.com") {
+    /* Fonts */
+    @import url("https://fonts.googleapis.com/css2?family=Prompt&display=swap");
+
+    /* Variables */
+    :root {
+        --background: hsl(240, 10%, 3.9%);
+        --foreground: hsl(0, 0%, 98%);
+        --card: hsl(240, 10%, 3.9%);
+        --card-foreground: hsl(0, 0%, 98%);
+        --popover: hsl(240, 10%, 3.9%);
+        --popover-foreground: hsl(0, 0%, 98%);
+        --primary: hsl(221.2, 83.2%, 53.3%);
+        --primary-foreground: hsl(210, 40%, 98%);
+        --secondary: hsl(240, 3.7%, 15.9%);
+        --secondary-foreground: hsl(0, 0%, 98%);
+        --muted: hsl(240, 3.7%, 15.9%);
+        --muted-foreground: hsl(240, 5%, 64.9%);
+        --accent: hsl(240, 3.7%, 15.9%);
+        --accent-foreground: hsl(0, 0%, 98%);
+        --destructive: hsl(0, 62.8%, 30.6%);
+        --destructive-foreground: hsl(0, 0%, 98%);
+        --border: hsl(240, 3.7%, 15.9%);
+        --input: hsl(240, 3.7%, 15.9%);
+        --ring: hsl(240, 4.9%, 83.9%);
+
+        --border-radius: 5px;
+    }
+
+    /* Base */
+    html,
+    body,
+    #dt_contenedor {
+        /* !important needed to override inline styles */
+        background: var(--background) !important;
+        color: var(--foreground) !important;
+        font-family: "Prompt", sans-serif !important;
+    }
+
+    /* Placeholder */
+    ::placeholder {
+        /* !important needed to override inline styles */
+        color: var(--muted-foreground) !important;
+    }
+
+    /* Links */
+    a {
+        /* !important needed to override inline styles */
+        color: var(--muted-foreground) !important;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            /* !important needed to override inline styles */
+            color: var(--foreground) !important;
+        }
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--background);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--primary);
+        border-radius: var(--border-radius);
+    }
+
+    /* Disable */
+    .module_home_x,
+    #animekimiads1,
+    #animekimiads2,
+    #animekimiads3,
+    #animekimiads4,
+    #animekimiads5,
+    #custom_html-2,
+    #custom_html-4 {
+        display: none;
+    }
+
+    /* Header */
+    #header {
+        background: hsla(240, 10%, 3.9%, 0.9);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--border);
+        box-shadow: none;
+
+        /* Logo */
+        .logo {
+            background: none;
+        }
+
+        /* Navigation */
+        .head-main-nav ul.main-header li a {
+            color: var(--muted-foreground);
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                color: var(--foreground);
+            }
+        }
+
+        /* Search */
+        .search form {
+            border-radius: var(--border-radius);
+
+            input[type="text"] {
+                color: var(--muted-foreground);
+                background: var(--background);
+                border: 1px solid var(--border);
+                padding: 0 15px;
+                border-radius: var(--border-radius);
+                height: 40px;
+                width: 100%;
+                transition: all 0.2s ease-in-out;
+
+                &:focus {
+                    color: var(--accent-foreground);
+                    background: var(--accent);
+                }
+            }
+
+            button[type="submit"] {
+                color: var(--muted-foreground);
+                background: transparent;
+                transition: all 0.2s ease-in-out;
+
+                &:hover {
+                    color: var(--foreground);
+                }
+            }
+        }
+    }
+
+    /* Main */
+    .module {
+        background: none;
+        border: none;
+        box-shadow: none;
+
+        /* Content */
+        .content {
+            padding: 0;
+            border-right: none;
+
+            header {
+                padding: 15px 0;
+
+                h1,
+                h2 {
+                    border-color: var(--primary);
+                }
+
+                span a {
+                    /* !important needed to override inline styles */
+                    background: var(--primary) !important;
+                    color: var(--primary-foreground) !important;
+                }
+
+                a.m_trending {
+                    float: none;
+                    font-size: 10px;
+                    font-weight: 300;
+                    text-transform: uppercase;
+                    padding: 3px 8px;
+                    border-radius: 3px;
+                    margin-left: 6px;
+                }
+            }
+
+            .items {
+                padding: 0;
+                margin-bottom: 15px;
+                border-bottom: none;
+
+                .item .poster {
+                    position: relative;
+                    overflow: hidden;
+                    background: none;
+                    border-radius: var(--border-radius);
+                    /* !important needed to override inline styles */
+                    box-shadow: 0 0 0 1px var(--border) !important;
+                    cursor: pointer;
+                    transition: all 0.2s ease-in-out;
+
+                    &:hover {
+                        /* !important needed to override inline styles */
+                        box-shadow: 0 0 0 1px var(--primary) !important;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                        border-radius: var(--border-radius);
+                    }
+
+                    .features-type {
+                        color: var(--primary-foreground);
+                        background: var(--primary);
+                        top: 6px;
+                        left: auto;
+                        right: 6px;
+                    }
+
+                    .features-status {
+                        position: absolute;
+                        color: var(--primary-foreground);
+                        background: var(--primary);
+                        font-size: 11px;
+                        float: right;
+                        clear: both;
+                        padding: 3px;
+                        top: 6px;
+                        left: 6px;
+                        right: auto;
+                        border-radius: 3px;
+                        white-space: nowrap;
+                        display: block;
+                        margin: 0;
+                        line-height: 1.5;
+                    }
+
+                    a:hover>.see {
+                        background: none;
+                    }
+
+                    h3 {
+                        position: absolute;
+                        bottom: -4px;
+                        left: 0;
+                        width: 100%;
+                        background: linear-gradient(0deg,
+                                rgba(0, 0, 0, 0.8) 0%,
+                                transparent 100%);
+                    }
+                }
+            }
+        }
+
+        /* Pagination */
+        .resppages.pagination {
+            display: none;
+        }
+
+        .pagination {
+            display: block;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+
+            span,
+            a {
+                margin: 0 4px;
+                text-decoration: none;
+                background: transparent;
+                border-radius: var(--border-radius);
+                transition: all 0.2s ease-in-out;
+                border: 1px solid transparent;
+                cursor: pointer;
+
+                &:hover {
+                    color: var(--accent-foreground);
+                    background: var(--accent);
+                    border: 1px solid var(--accent);
+                }
+            }
+
+            span.current {
+                color: var(--accent-foreground);
+                background: var(transparent);
+                border: 1px solid var(--border);
+            }
+
+            a.inactive {
+                pointer-events: none;
+                background: transparent;
+                border: 1px solid transparent;
+            }
+
+            .arrow_pag {
+                cursor: pointer;
+            }
+        }
+
+        /* Sidebar */
+        .sidebar {
+            padding: 15px 20px;
+
+            .dt_mainmeta nav.genres ul li {
+                a {
+                    color: var(--muted-foreground);
+                    transition: all 0.2s ease-in-out;
+
+                    &:hover {
+                        color: var(--foreground);
+                    }
+                }
+            }
+
+            .dt_mainmeta nav.releases ul li {
+                a {
+                    color: var(--secondary-foreground);
+                    background: var(--secondary);
+                    transition: all 0.2s ease-in-out;
+                    border-radius: var(--border-radius);
+
+                    &:hover {
+                        color: var(--foreground);
+                        background: var(--primary);
+                    }
+                }
+            }
+        }
+    }
+
+    /* Footer */
+    footer.main {
+        display: none;
+    }
+
+    /* Single */
+    #single {
+        background: none;
+        border: none;
+        box-shadow: none;
+
+        .content {
+            border-right: none;
+
+            .wp-content {
+                border-bottom: 1px solid var(--border);
+            }
+
+            #episodes>div.wp-content {
+                border-bottom: none;
+            }
+
+            #seasons .se-c .se-q {
+                background: var(--primary);
+
+                span.se-o {
+                    background: var(--primary);
+                }
+
+                span.se-t {
+                    background: transparent;
+                    padding: 14.5px 0;
+                }
+            }
+        }
+
+        .dt_mainmeta nav.genres ul li {
+            a {
+                color: var(--muted-foreground);
+                transition: all 0.2s ease-in-out;
+
+                &:hover {
+                    color: var(--foreground);
+                }
+            }
+        }
+
+        /* Breadcrumb */
+        .dt-breadcrumb {
+            display: none;
+        }
+
+        .sheader {
+            border-bottom: 2px solid var(--primary);
+
+            .poster img {
+                border-radius: var(--border-radius);
+            }
+
+            .starstruck .star-on-png:before {
+                /* !important needed to override inline styles */
+                color: var(--primary) !important;
+            }
+
+            .starstruck-rating-wrap {
+                background: var(--primary);
+                /* !important needed to override inline styles */
+                color: var(--foreground) !important;
+            }
+
+            .starstruck-wrap {
+                border-top: 1px solid var(--border);
+                border-bottom: 1px solid var(--border);
+
+                .dt_rating_vgs {
+                    background: var(--primary);
+                }
+            }
+
+            .sgeneros a {
+                /* !important needed to override inline styles */
+                color: var(--muted-foreground) !important;
+                border-left: 1px solid var(--border);
+            }
+        }
+
+        .sbox {
+            display: none;
+            /* !important needed to override inline styles */
+            border: none !important;
+        }
+    }
+
+    /* Player */
+    .dooplay_player {
+        border-bottom: none;
+
+        .play {
+            background: transparent;
+        }
+
+        .play.isnd {
+            padding: 0;
+        }
+
+        h2 {
+            background: var(--accent);
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* Player Server Options */
+        .options {
+            background: var(--secondary);
+            padding: 0;
+
+            ul {
+                margin: 0;
+
+                li {
+                    border-bottom: 1px solid var(--border);
+
+                    span.title {
+                        color: var(--foreground);
+                    }
+                }
+
+                li:hover span.title {
+                    color: var(--foreground);
+                }
+
+                li.on {
+                    background: var(--primary);
+
+                    &:hover {
+                        background: var(--primary);
+                    }
+                }
+            }
+        }
+    }
+}
